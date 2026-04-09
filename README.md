@@ -37,7 +37,7 @@ using vLink.Toon.Core;
 
 var delimiter = ToonDelimiter.COMMA;
 var keyFolding = ToonKeyFolding.Safe;
-var layout = ToonObjectArrayLayout.Hybrid;
+var layout = ToonObjectArrayLayout.Columnar;
 ```
 
 ## Target Frameworks

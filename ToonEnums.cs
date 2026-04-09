@@ -48,5 +48,5 @@ public enum ToonObjectArrayLayout
     Auto,
 
     /// <summary>Use shared primitive columns as a tabular header and spill complex fields below each row.</summary>
-    Hybrid
+    Columnar
 }

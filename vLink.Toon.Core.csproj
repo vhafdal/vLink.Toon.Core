@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0;net8.0;net9.0;netstandard2.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>vLink.Toon.Core</RootNamespace>
+    <AssemblyName>vLink.Toon.Core</AssemblyName>
+
+    <PackageId>vLink.Toon.Core</PackageId>
+    <Version>0.1.0</Version>
+    <Authors>Þorvaldur Hafdal</Authors>
+    <Company>vLink</Company>
+    <Description>Core TOON contracts for .NET, including DTO annotations and shared configuration enums.</Description>
+    <PackageTags>toon;contracts;annotations;dto;serialization</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://vlink-team.atlassian.net/wiki/x/r4Aq</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/vhafdal/vLink.Toon.Core</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>vLink.snk</AssemblyOriginatorKeyFile>
+    <PublicSign>true</PublicSign>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

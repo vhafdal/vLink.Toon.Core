@@ -9,7 +9,7 @@
     <AssemblyName>vLink.Toon.Core</AssemblyName>
 
     <PackageId>vLink.Toon.Core</PackageId>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <Authors>Þorvaldur Hafdal</Authors>
     <Company>vLink</Company>
     <Description>Core TOON contracts for .NET, including DTO annotations and shared configuration enums.</Description>

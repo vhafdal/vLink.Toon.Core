@@ -9,25 +9,34 @@
     <AssemblyName>vLink.Toon.Core</AssemblyName>
 
     <PackageId>vLink.Toon.Core</PackageId>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
     <Authors>Þorvaldur Hafdal</Authors>
     <Company>vLink</Company>
     <Description>Core TOON contracts for .NET, including DTO annotations and shared configuration enums.</Description>
     <PackageTags>toon;contracts;annotations;dto;serialization</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://vlink-team.atlassian.net/wiki/x/r4Aq</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vhafdal/vLink.Toon.Core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>vLink.snk</AssemblyOriginatorKeyFile>
     <PublicSign>true</PublicSign>
+    <Title>vLink Toon Core</Title>
+    <Copyright>Þorvaldur Hafdal(vLink)</Copyright>
+    <PackageIcon>Assets\vLink.Toon.Format-128.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE.md" Pack="true" PackagePath="" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\vLink.Toon.Format-128.png" Pack="true" PackagePath="Assets\" />
   </ItemGroup>
 
 </Project>

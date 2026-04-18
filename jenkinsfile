@@ -1,0 +1,34 @@
+pipeline {
+    agent { label 'dotnet' }
+
+    environment {
+        PROJECT = 'vLink.Toon.Core.csproj'
+        CONFIG = 'Release'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Pipeline') {
+            steps {
+                sh """
+                    dotnet --info
+                    dotnet restore ${PROJECT}
+                    dotnet build ${PROJECT} -c ${CONFIG} --no-restore
+                    dotnet test ${PROJECT} -c ${CONFIG} --no-build --logger trx
+                    dotnet publish ${PROJECT} -c ${CONFIG} --no-build -o ./out
+                """
+            }
+        }
+    }
+
+    post {
+        always {
+            archiveArtifacts artifacts: 'out/**', fingerprint: true
+        }
+    }
+}

@@ -4,31 +4,29 @@ pipeline {
     environment {
         PROJECT = 'vLink.Toon.Core.csproj'
         CONFIG = 'Release'
+        DOTNET_CLI_TELEMETRY_OPTOUT = '1'
+        DOTNET_NOLOGO = 'true'
     }
 
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                checkout scm
-            }
-        }
-
-        stage('Build Pipeline') {
-            steps {
-                sh """
-                    dotnet --info
-                    dotnet restore ${PROJECT}
-                    dotnet build ${PROJECT} -c ${CONFIG} --no-restore
-                    dotnet test ${PROJECT} -c ${CONFIG} --no-build --logger trx
-                    dotnet publish ${PROJECT} -c ${CONFIG} --no-build -o ./out
-                """
+                container('dotnet') {
+                    sh """
+                        dotnet --info
+                        dotnet restore ${PROJECT}
+                        dotnet build ${PROJECT} -c ${CONFIG} --no-restore
+                        dotnet test ${PROJECT} -c ${CONFIG} --no-build --logger "trx;LogFileName=test-results.trx"
+                        dotnet publish ${PROJECT} -c ${CONFIG} --no-build -o ./out
+                    """
+                }
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: 'out/**', fingerprint: true
+            archiveArtifacts artifacts: 'out/**', fingerprint: true, allowEmptyArchive: true
         }
     }
 }
